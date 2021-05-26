@@ -1,0 +1,17 @@
+.card{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 30px;
+    .heading{
+        text-align: center;
+    }
+    .form{
+        display: grid;
+    }
+    .signup{
+        padding: 15px 0px;
+    }
+}

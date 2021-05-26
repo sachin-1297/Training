@@ -1,0 +1,15 @@
+<mat-card class="card mat-elevation-z8">
+    <h1 class="heading">Login Form </h1>
+    <form class="form" #userForm="ngForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" [(ngModel)]="userModel.username" name="username">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [(ngModel)]="userModel.password" name="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+        <p class="signup">Dont have an account ? Please <a routerLink="/signup">Signup</a></p>
+    </form>
+</mat-card>
