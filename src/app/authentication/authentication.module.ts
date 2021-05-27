@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
     NgSelectModule,
     HttpClientModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers: [AuthService]
 })
 export class AuthenticationModule { }

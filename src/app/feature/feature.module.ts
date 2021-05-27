@@ -13,6 +13,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CanDeactivateGuard } from '../shared/can-deactivate.guard';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -20,7 +22,7 @@ const routes: Routes = [
     path: '', component: BaseComponent, children: [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'about', component: AboutComponent }
+      { path: 'about', component: AboutComponent, canDeactivate: [CanDeactivateGuard] }
     ]
   }
 ]
@@ -35,7 +37,9 @@ const routes: Routes = [
     MatIconModule,
     MatTooltipModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     MatDialog,
@@ -43,6 +47,7 @@ const routes: Routes = [
       provide: MatDialogRef,
       useValue: []
     },
+    CanDeactivateGuard
   ],
   entryComponents: [DialogComponent]
 })

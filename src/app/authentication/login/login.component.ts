@@ -23,19 +23,19 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log(this.userModel);
-    this.authService.login(this.userModel).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      })
-    /* if (this.userModel.username !== 'sachinagra.shakya@gmail.com' && this.userModel.password !== 'Password@1') {
+    /*  this.authService.login(this.userModel).subscribe(
+       (res) => {
+         console.log(res);
+       },
+       (err) => {
+         console.log(err);
+       }) */
+    if (this.userModel.username !== 'sachinagra.shakya@gmail.com' && this.userModel.password !== 'Password@1') {
       alert('Invaid credentials')
     } else {
       localStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['/feature']);
-    } */
+    }
   }
 
 }
